@@ -13,7 +13,7 @@ install: AutoRaise.app
 	cp -r AutoRaise.app /Applications/
 
 AutoRaise: AutoRaise.mm
-	g++ $(CXXFLAGS) -o $@ $^ -framework AppKit
+	g++ $(CXXFLAGS) -o $@ $^ -framework AppKit -F /System/Library/PrivateFrameworks -framework SkyLight
 
 AutoRaise.app: AutoRaise Info.plist AutoRaise.icns
 	./create-app-bundle.sh
