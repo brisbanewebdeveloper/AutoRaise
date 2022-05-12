@@ -28,7 +28,7 @@
 #include <Carbon/Carbon.h>
 #include <libproc.h>
 
-#define AUTORAISE_VERSION "3.0"
+#define AUTORAISE_VERSION "3.1"
 #define STACK_THRESHOLD 20
 
 // It seems OSX Monterey introduced a transparent 3 pixel border around each window. This
