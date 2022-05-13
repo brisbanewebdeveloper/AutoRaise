@@ -81,6 +81,9 @@ If you experience any issues, it is suggested to first check these points:
 - Are you running two AutoRaise instances at the same time? Use "Activity Monitor" to check this.
 - Is Accessibility properly enabled? To be absolutely sure, toggle **off** and **on** access
 for AutoRaise in the System Preferences|Security & Privacy|Privacy|Accessibility pane.
+- It is known that some OSX Applications may not raise properly using the "activateWithOptions" method.
+If you suspect this to be the case, try compiling with: make CXXFLAGS=-DACTIVATE_FALLBACK. Note that
+this will introduce a deprecation warning.
 
 If after checking the above you still experience the problem, I encourage you to create an issue
 in github. It will be helpful to provide (a small part of) the verbose log, which can be enabled
