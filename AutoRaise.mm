@@ -824,6 +824,14 @@ void onTick() {
 #elif defined ALTERNATIVE_TASK_SWITCHER
     // delayCount = 0 -> warp only
     if (!delayCount) { return; }
+
+    CGEventRef _keyDownEvent = CGEventCreateKeyboardEvent(NULL, 0, true);
+    CGEventFlags keyFlags = CGEventGetFlags(_keyDownEvent);
+    if (_keyDownEvent) { CFRelease(_keyDownEvent); }
+    if (keyFlags & kCGEventFlagMaskCommand) {
+        if (verbose) { NSLog(@"Aborting"); }
+        return;
+    }
 #endif
 
     // delayTicks = 0 -> delay disabled
